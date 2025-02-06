@@ -99,8 +99,8 @@
 
             if (response.ok) {
                 swal.fire({
-                    title: 'Registration Successful',
-                    text: 'You have successfully registered for a new account',
+                    title: 'Successfullu Requested an Appointment',
+                    text: 'You have successfully requested an appointment. Please wait for the barber to approve or reject your request.',
                     icon: 'success',
                     confirmButtonText: 'Continue'
                 });
@@ -108,7 +108,7 @@
                 // Error alert
                 swal.fire({
                     title: 'Error!',
-                    text: 'User registration failed. Please try again.',
+                    text: 'Your request was not successful. Please check your connection and try again.',
                     icon: 'error',
                     confirmButtonText: 'Retry',
                 });
@@ -270,6 +270,7 @@
                         type="text"
                         id="name"
                         class="w-full border p-2 rounded-md mb-3"
+                        required
                         bind:value={newAppointmentData.appointmentDetails}
                     />
 
@@ -280,6 +281,7 @@
                         type="date"
                         id="date"
                         class="w-full border p-2 rounded-md mb-3"
+                        required
                         bind:value={newAppointmentData.date}
                     />
 
@@ -290,6 +292,7 @@
                         type="time"
                         id="time"
                         class="w-full border p-2 rounded-md mb-3"
+                        required
                         bind:value={newAppointmentData.time}
                     />
 
@@ -300,6 +303,7 @@
                     <select
                         id="barber"
                         class="w-full border p-2 rounded-md mb-3"
+                        required
                         bind:value={newAppointmentData.barber}
                     >
                         {#each barbers as barber}
