@@ -7,11 +7,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'freshbreeze',
+    host: process.env.HOST,
+    user: process.env.USER,
+    database: process.env.DATABASE,
     password: process.env.PASSWORD,
-    port: '3306',
+    port: process.env.PORT,
     connectionLimit: 10,
     waitForConnections: true,
     queueLimit: 0
