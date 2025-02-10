@@ -54,6 +54,8 @@
                     icon: 'success',
                     confirmButtonText: 'Continue'
                 });
+
+                login = true;
             } else {
                 // Error alert
                 swal.fire({
