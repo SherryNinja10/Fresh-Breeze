@@ -6,6 +6,10 @@ export async function POST({ request }) {
     const { firstName, lastName, email, password } = await request.json();
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    if (firstName === undefined || lastName === undefined || email === undefined || password === undefined) {
+        return json({ message: 'Missing required fields' }, { status: 400 });
+    }
+
     try {
         const [result] = await pool.execute(
             'INSERT INTO customer (first_name, last_name, email, passcode) VALUES (?, ?, ?, ?)',
