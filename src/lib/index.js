@@ -1,6 +1,5 @@
 import { dot } from 'node:test/reporters';
 
-// place files you want to import through the `$lib` alias in this folder.
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
