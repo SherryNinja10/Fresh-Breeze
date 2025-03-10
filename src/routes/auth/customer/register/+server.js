@@ -17,6 +17,7 @@ export async function POST({ request }) {
         );
     }
     catch (error) {
+        console.error("SQL Error:", error);  // Log the error
         return json({ message: 'Failed' }, { status: 500 });
     }
 
